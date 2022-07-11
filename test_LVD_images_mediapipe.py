@@ -183,7 +183,8 @@ class OptimizationSMPL(torch.nn.Module):
         super(OptimizationSMPL, self).__init__()
 
         self.pose = torch.nn.Parameter(torch.zeros(1, 72).cuda())
-        self.beta = torch.nn.Parameter((torch.zeros(1, 300).cuda()))
+        self.beta = torch.nn.Parameter((torch.zeros(1, 10).cuda()))
+        # self.beta = torch.nn.Parameter((torch.zeros(1, 300).cuda()))
         self.trans = torch.nn.Parameter(torch.zeros(1, 3).cuda())
         self.scale = torch.nn.Parameter(torch.ones(1).cuda()*90)
 
