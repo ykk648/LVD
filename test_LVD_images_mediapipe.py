@@ -158,7 +158,10 @@ class Test:
                     pose, beta, trans, scale = parameters_smpl.forward()
                     vertices_smpl = (self._model.SMPL.forward(theta=pose, beta=beta, get_skin=True)[0][0] + trans)*scale
                     pred_mesh = vertices_smpl.cpu().data.numpy()
-
+            print("pose: {}".format(pose))
+            print("beta: {}".format(beta))
+            print("trans: {}".format(trans))
+            print("scale: {}".format(scale))
             # Render image of the SMPL reconstruction:
             resolution = 1024
 
